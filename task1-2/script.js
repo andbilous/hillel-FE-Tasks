@@ -1,19 +1,13 @@
-document.write("**************<br>");
-var basis = prompt("Введите основу цилиндра?\n", "");
-var radius = prompt("Введите радиус цилиндра?\n", "");
-var height = prompt("Введите высоту цилиндра?\n", "");
-var pNum = Math.PI;
-var result = pNum * Math.pow(radius, 2) * height;
-document.write(
-  "Обьем цилиндра с площадью основы " +
-    basis +
-    " радиусом " +
-    radius +
-    " и высотой " +
-    height +
-    " равен:<br>"
-);
-document.write("--------------------<br>");
-document.write("V =" + result.toFixed(2) + "<br>");
-document.write("--------------------<br>");
-document.write("end.");
+var a = parseInt(prompt("Введите переменную а", ""), 10);
+document.write("Var " + a + isVarEven(a) + "<br>");
+var b = parseInt(prompt("Введите переменную b", ""), 10);
+document.write("Var " + b + isVarEven(b) + "<br>");
+var c = parseInt(prompt("Введите переменную c", ""), 10);
+document.write("Var " + c + isVarEven(c) + "<br>");
+var res = a + b + c;
+document.write("Result :" + res);
+function isVarEven(param) {
+  if (param % 2 === 0) {
+    return " is Even";
+  } else return " is Odd, the oddement is " + (param % 2);
+}
