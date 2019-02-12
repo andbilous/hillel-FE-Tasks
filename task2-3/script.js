@@ -1,19 +1,14 @@
-document.write("**************<br>");
-var basis = prompt("Введите основу цилиндра?\n", "");
-var radius = prompt("Введите радиус цилиндра?\n", "");
-var height = prompt("Введите высоту цилиндра?\n", "");
-var pNum = Math.PI;
-var result = pNum * Math.pow(radius, 2) * height;
-document.write(
-  "Обьем цилиндра с площадью основы " +
-    basis +
-    " радиусом " +
-    radius +
-    " и высотой " +
-    height +
-    " равен:<br>"
-);
-document.write("--------------------<br>");
-document.write("V =" + result.toFixed(2) + "<br>");
-document.write("--------------------<br>");
+var numbersTable = document.getElementById("numbers");
+var virtualTable = document.createElement('table');
+var itemRow;
+for (var i = 0; i <= 100; i = i + 2) {
+  if(i===0 || i%5===0){
+     itemRow = document.createElement('tr');
+  }
+    var itemCell = document.createElement('td');
+    itemCell.textContent = i;
+    itemRow.appendChild(itemCell);
+    virtualTable.appendChild(itemRow);
+}
+numbersTable.innerHTML = virtualTable.innerHTML;
 document.write("end.");
