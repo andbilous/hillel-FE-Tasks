@@ -1,19 +1,23 @@
-document.write("**************<br>");
-var basis = prompt("Введите основу цилиндра?\n", "");
-var radius = prompt("Введите радиус цилиндра?\n", "");
-var height = prompt("Введите высоту цилиндра?\n", "");
-var pNum = Math.PI;
-var result = pNum * Math.pow(radius, 2) * height;
-document.write(
-  "Обьем цилиндра с площадью основы " +
-    basis +
-    " радиусом " +
-    radius +
-    " и высотой " +
-    height +
-    " равен:<br>"
-);
-document.write("--------------------<br>");
-document.write("V =" + result.toFixed(2) + "<br>");
-document.write("--------------------<br>");
+var factorialSum = 0;
+document.write("Суммы факториалов<br>");
+var a = parseInt(prompt("Введите число a\n", ""));
+var b = parseInt(prompt("Введите число b\n", ""));
+var h = parseInt(prompt("Введите интервал?\n", ""));
+if (a > b) {
+    var temp = a;
+    a = b;
+    b = temp;
+}
+
+function factorial(number) {
+    var result = 1;
+    for (var i = 1; i <= number; i++) {
+        result = result * i;
+    }
+    return result;
+}
+for (var i = a; i <= b; i = i + h) {
+    factorialSum += factorial(i);
+    document.write(factorialSum + '<br>');
+}
 document.write("end.");
