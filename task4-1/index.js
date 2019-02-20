@@ -9,4 +9,4 @@ for (var i = 0; i < a.length; i = i + 2) {
     a[i + 1] = temp;
   }
 }
-console.log(a);
+document.write(a);
