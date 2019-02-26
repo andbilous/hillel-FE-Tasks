@@ -9,9 +9,6 @@ function isPrime(number) {
       return true;
     }else return false;
   }
-  if(number/number === 0 && number/1===0){
-    return true;
-  }else return false;
 }
 for (var i = 0; i < A.length; i++) {
   if (isPrime(A[i])) {
