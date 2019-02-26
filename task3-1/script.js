@@ -1,13 +1,16 @@
-var A = [23, 11, 13, 550, 100, 53, 31, 23, 7, 246, 436];
+var A = [9,23, 11, 13, 550, 100, 53, 31, 23, 7, 246, 436];
 var B = [];
 var min, max;
 min = max = A[0];
 
 function isPrime(number) {
   for(var i =2;i<number;i++){
-    if(number%i !==0){
+    if(number%i ===0){
+      return false;
+    }
+    if(i===number || (i>Math.sqrt(number))){
       return true;
-    }else return false;
+    }
   }
 }
 for (var i = 0; i < A.length; i++) {
