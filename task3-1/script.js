@@ -4,12 +4,14 @@ var min, max;
 min = max = A[0];
 
 function isPrime(number) {
-  for (var i = 2; i <= Math.sqrt(number); i++) {
-    if (number % i === 0) {
-      return false;
-    }
-    return number != 1;
+  for(var i =2;i<number;i++){
+    if(number%i !==0){
+      return true;
+    }else return false;
   }
+  if(number/number === 0 && number/1===0){
+    return true;
+  }else return false;
 }
 for (var i = 0; i < A.length; i++) {
   if (isPrime(A[i])) {
