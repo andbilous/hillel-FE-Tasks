@@ -8,11 +8,12 @@ function isPrime(number) {
     if(number%i ===0){
       return false;
     }
-    if(i===number || (i>Math.sqrt(number))){
+    if(i>Math.sqrt(number)){
       return true;
     }
   }
 }
+
 for (var i = 0; i < A.length; i++) {
   if (isPrime(A[i])) {
     B[B.length] = A[i];
