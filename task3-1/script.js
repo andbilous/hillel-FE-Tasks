@@ -8,10 +8,8 @@ function isPrime(number) {
     if(number%i ===0){
       return false;
     }
-    if(i>Math.sqrt(number)){
-      return true;
-    }
   }
+  return true;
 }
 
 for (var i = 0; i < A.length; i++) {
