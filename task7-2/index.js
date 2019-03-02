@@ -1,8 +1,8 @@
-function assignObjects(obj1, obj2) {
+function assignObjects1(obj1, obj2) {
   return Object.assign(obj1, obj2);
 }
 
-function assignObjects(obj1, obj2, flag) {
+function assignObjects2(obj1, obj2, flag) {
   var obj1Clone = Object.assign({}, obj1);
   if (flag) {
     return Object.assign(obj1, obj2, obj1Clone);
