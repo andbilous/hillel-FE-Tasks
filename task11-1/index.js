@@ -1,13 +1,13 @@
  function SuperMath() {
    this.check = function (obj) {
      var znaki = ['+', '-', '*', '/'];
-     while (isNaN(obj.x) && isNaN(obj.y)) {
-       console.log('Numbers are Nan');
+     while (isNaN(obj.x)) {
        obj.x = prompt('Please enter X', 0);
+     }
+     while (isNaN(obj.y)) {
        obj.y = prompt('Please enter Y', 0);
      }
      while (!znaki.includes(obj.z)) {
-       console.log('Incorrect symbol');
        obj.z = prompt('Please enter znak', '+');
      }
      var answer = prompt('Do you want to calc ? (y/n)', '');
