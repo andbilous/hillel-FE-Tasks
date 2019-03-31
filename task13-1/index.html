@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            position: relative;
+        }
+
+        #diagram {
+            width: 40px;
+            border: 1px solid black;
+            padding-top: 5px;
+            position: relative;
+        }
+
+        #com {
+            width: 20px;
+            height: 5px;
+            border: 1px solid red;
+            background-color: red;
+            position: absolute;
+            bottom: -9px;
+            left: -2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="range" id="range">
+    </div>
+    <div>
+        <input type="number" id="number">
+    </div>
+    <div id="diagram">
+        <div id="com"></div>
+    </div>
+    <script src='index.js'></script>
+</body>
+
+</html>
