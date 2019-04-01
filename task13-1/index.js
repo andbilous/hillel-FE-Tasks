@@ -13,16 +13,17 @@ range.oninput = () => {
 };
 
 function getComPercent(range) {
-  if (range > 0 && range < 20) {
-    return 0.02;
-  }
-  if (range >= 20 && range < 50) {
-    return 0.04;
-  }
-  if (range >= 50 && range < 75) {
-    return 0.06;
-  }
-  if (range >= 75 && range < 100) {
-    return 0.08;
-  }
+  let comPercent;
+  let com = {
+    0.02: new RegExp([0 - 9] | (1)[0 - 9]),
+    0.04: new RegExp([23][0 - 9] | (4)[0 - 9]),
+    0.06: new RegExp([56][0 - 9] | (7)[0 - 4]),
+    0.08: new RegExp((7)[5 - 9] | [89][0 - 9])
+  };
+  Object.values(com).forEach(regex => {
+    if (regex.test(range)) {
+      comPercent = Object.keys(com).find(percent => com[percent] === regex);
+    }
+  });
+  return comPercent;
 }
