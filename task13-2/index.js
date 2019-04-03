@@ -39,8 +39,8 @@ function moveElement(direction) {
   }
 }
 function squat() {
-  let initialWidth = hero.offsetWidth;
-  let initialHeight = hero.offsetHeight;
+  let initialWidth = hero.clientWidth;
+  let initialHeight = hero.clientHeight;
   heroWidth = hero.offsetWidth * 1.15;
   heroHeight = hero.offsetHeight * 0.4;
   hero.style.height = heroHeight + "px";
