@@ -1,23 +1,37 @@
-let list =['A','B','C'];
-let targetList=document.querySelector('.list');
+let targetList = document.querySelector('.list');
+targetList.style.display = 'none';
 
-for(let i=0;i<list.length;i++){
-  let li=document.createElement('li');
-  li.setAttribute('data-action',()=>{console.log('Action'+i);})
-  li.setAttribute('data-title','Item number'+i)
-  li.innerHTML=list[i];
+let actions = [{
+    title: 'action1',
+    action: () => {
+      alert('action1');
+    }
+  },
+  {
+    title: 'action2',
+    action: () => {
+      alert('action2');
+    }
+  },
+  {
+    title: 'action3',
+    action: () => {
+      alert('action3');
+    }
+  }
+]
+
+for (let i = 0; i < actions.length; i++) {
+  let li = document.createElement('li');
+  li.addEventListener('click', actions[i].action);
+  li.innerHTML = actions[i].title;
   targetList.appendChild(li);
 }
 
-targetList.addEventListener('contextmenu',(e)=>{
-  console.log('RCLICK');
+
+window.oncontextmenu = e => {
   e.preventDefault();
-});
-
-window.addEventListener('',(e)=>{
-
-});
-
-window.addEventListener('click',(e)=>{
-  console.log(e.target);
-});
+  targetList.style.top = e.clientY + 'px';
+  targetList.style.left = e.clientX + 'px';
+  targetList.style.display = 'block';
+}
