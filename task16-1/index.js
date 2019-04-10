@@ -1,14 +1,6 @@
 const h = 10;
 const step = 30 + "px";
 let hero = document.querySelector("#hero");
-let heroMenu=document.querySelector("#hero_menu");
-heroMenu.style.display='none';
-
-let action ={
-  jump:()=>{},
-  remove:()=>{},
-  changeColor:()=>{},
-};
 
 function moveElement(direction) {
   switch (direction) {
@@ -81,7 +73,3 @@ window.onkeydown = e => {
       break;
   }
 };
-hero.oncontextmenu=e=>{
-  e.preventDefault();
-  console.log('RCLICK');
-}
