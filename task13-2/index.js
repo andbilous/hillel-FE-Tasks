@@ -1,31 +1,23 @@
 const h = 10;
 const step = 30 + "px";
 let hero = document.querySelector("#hero");
-let heroMenu=document.querySelector("#hero_menu");
-heroMenu.style.display='none';
-
-let action ={
-  jump:()=>{},
-  remove:()=>{},
-  changeColor:()=>{},
-};
 
 function moveElement(direction) {
   switch (direction) {
-    case "left":
-      if (!hero.style.marginLeft) {
-        hero.style.marginLeft = h + "px";
+    case "right":
+      if (!hero.style.left) {
+        hero.style.left = h + "px";
       } else {
-        let currentValue = parseInt(hero.style.marginLeft.replace("px", ""));
-        hero.style.marginLeft = h - currentValue + "px";
+        let currentValue = parseInt(hero.style.left.replace("px", ""));
+        hero.style.left = h + currentValue + "px";
       }
       break;
-    case "right":
-      if (!hero.style.marginLeft) {
-        hero.style.marginLeft = h + "px";
+    case "left":
+      if (!hero.style.left) {
+        hero.style.left = h - "px";
       } else {
-        let currentValue = parseInt(hero.style.marginLeft.replace("px", ""));
-        hero.style.marginLeft = h + currentValue + "px";
+        let currentValue = parseInt(hero.style.left.replace("px", ""));
+        hero.style.left =  currentValue - h + "px";
       }
       break;
     case "up":
@@ -81,7 +73,8 @@ window.onkeydown = e => {
       break;
   }
 };
-hero.oncontextmenu=e=>{
-  e.preventDefault();
-  console.log('RCLICK');
+window.oncontextmenu=e=>{
+    console.log('RCLICK');
+    e.preventDefault();
+
 }
