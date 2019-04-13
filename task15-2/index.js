@@ -4,20 +4,20 @@ let hero = document.querySelector("#hero");
 
 function moveElement(direction) {
   switch (direction) {
-    case "left":
-      if (!hero.style.marginLeft) {
-        hero.style.marginLeft = h + "px";
+    case "right":
+      if (!hero.style.left) {
+        hero.style.left = h + "px";
       } else {
-        let currentValue = parseInt(hero.style.marginLeft.replace("px", ""));
-        hero.style.marginLeft = h - currentValue + "px";
+        let currentValue = parseInt(hero.style.left.replace("px", ""));
+        hero.style.left = h + currentValue + "px";
       }
       break;
-    case "right":
-      if (!hero.style.marginLeft) {
-        hero.style.marginLeft = h + "px";
+    case "left":
+      if (!hero.style.left) {
+        hero.style.left = h - "px";
       } else {
-        let currentValue = parseInt(hero.style.marginLeft.replace("px", ""));
-        hero.style.marginLeft = h + currentValue + "px";
+        let currentValue = parseInt(hero.style.left.replace("px", ""));
+        hero.style.left =  currentValue - h + "px";
       }
       break;
     case "up":
@@ -73,3 +73,8 @@ window.onkeydown = e => {
       break;
   }
 };
+window.oncontextmenu=e=>{
+    console.log('RCLICK');
+    e.preventDefault();
+
+}
