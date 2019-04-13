@@ -21,19 +21,19 @@ function moveElement(direction) {
       }
       break;
     case "up":
-      if (!hero.style.marginTop) {
-        hero.style.marginTop = h + "px";
+      if (!hero.style.top) {
+        hero.style.top = h + "px";
       } else {
-        let currentValue = parseInt(hero.style.marginTop.replace("px", ""));
-        hero.style.marginTop = currentValue - h + "px";
+        let currentValue = parseInt(hero.style.top.replace("px", ""));
+        hero.style.top = currentValue - h + "px";
       }
       break;
     case "down":
-      if (!hero.style.marginTop) {
-        hero.style.marginTop = h + "px";
+      if (!hero.style.top) {
+        hero.style.top = h + "px";
       } else {
-        let currentValue = parseInt(hero.style.marginTop.replace("px", ""));
-        hero.style.marginTop = currentValue + h + "px";
+        let currentValue = parseInt(hero.style.top.replace("px", ""));
+        hero.style.top = currentValue + h + "px";
       }
       break;
   }

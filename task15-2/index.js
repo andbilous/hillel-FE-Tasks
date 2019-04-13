@@ -1,7 +1,15 @@
 const h = 10;
 const step = 30 + "px";
 let hero = document.querySelector("#hero");
+let actionContextMenu=document.querySelector('#actions');
+actionContextMenu.style.display='none';
 
+
+let actions={
+  jump:()=>{hero.style.animationName = "jump";},
+  remove:()=>{},
+  changeColor:()=>{},
+}
 function moveElement(direction) {
   switch (direction) {
     case "right":
@@ -21,19 +29,19 @@ function moveElement(direction) {
       }
       break;
     case "up":
-      if (!hero.style.marginTop) {
-        hero.style.marginTop = h + "px";
+      if (!hero.style.top) {
+        hero.style.top = h + "px";
       } else {
-        let currentValue = parseInt(hero.style.marginTop.replace("px", ""));
-        hero.style.marginTop = currentValue - h + "px";
+        let currentValue = parseInt(hero.style.top.replace("px", ""));
+        hero.style.top = currentValue - h + "px";
       }
       break;
     case "down":
-      if (!hero.style.marginTop) {
-        hero.style.marginTop = h + "px";
+      if (!hero.style.top) {
+        hero.style.top = h + "px";
       } else {
-        let currentValue = parseInt(hero.style.marginTop.replace("px", ""));
-        hero.style.marginTop = currentValue + h + "px";
+        let currentValue = parseInt(hero.style.top.replace("px", ""));
+        hero.style.top = currentValue + h + "px";
       }
       break;
   }
@@ -54,7 +62,7 @@ function squat() {
 window.onkeydown = e => {
   switch (e.keyCode) {
     case 32:
-      hero.style.animationName = "jump";
+      actions.jump();
       break;
     case 39:
       moveElement("right");
@@ -74,7 +82,12 @@ window.onkeydown = e => {
   }
 };
 window.oncontextmenu=e=>{
-    console.log('RCLICK');
+  if(e.target===hero){
+    console.log(e.target.style);
+    actionContextMenu.style.display='block';
+    actionContextMenu.style.left=hero.style.left;
+    actionContextMenu.style.marginTop=hero.style.marginTop;
+  }
     e.preventDefault();
 
 }
