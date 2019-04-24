@@ -4,12 +4,15 @@ let hero = document.querySelector("#hero");
 let actionContextMenu=document.querySelector('#actions');
 actionContextMenu.style.display='none';
 
-
 let actions={
-  jump:()=>{hero.style.animationName = "jump";},
+  jump:()=>{
+    hero.style.bottom+=h+'px';
+  },
   remove:()=>{},
   changeColor:()=>{},
 }
+
+
 function moveElement(direction) {
   switch (direction) {
     case "right":
@@ -82,12 +85,13 @@ window.onkeydown = e => {
   }
 };
 window.oncontextmenu=e=>{
+  e.preventDefault();
   if(e.target===hero){
     console.log(e.target.style);
     actionContextMenu.style.display='block';
     actionContextMenu.style.left=hero.style.left;
     actionContextMenu.style.marginTop=hero.style.marginTop;
   }
-    e.preventDefault();
+    
 
 }
