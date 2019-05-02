@@ -1,8 +1,19 @@
-function inArray (val,arr){
-    if(arr instanceof Array){
-        if(arr.includes(val)){
-            return true;
-        }else return false;
-    }else throw new Error('arr is not array');  
+let obj1={
+    5:3,
+    'test':'4',
+    innerObj1:{
+        1:1,
+        2:2,
+        3:6,
+        'ss':'g'
+    },
+    calc:(obj)=>{
+        return Object.values(obj);
+    }
+
 }
-console.log(inArray('hello', ['svnj', 'hello', 'cvpoq']));
+let obj2={
+    '2':'5',
+    
+}
+console.log(obj1.calc());
