@@ -3,7 +3,6 @@
   fetch('https://api.github.com/orgs/hillel-front-end')
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       fetch(data.repos_url)
         .then(response => response.json())
         .then(data => {
